@@ -99,7 +99,6 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
     //forge "net.neoforged:forge:${minecraft_version}-${neo_version}"
-
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.6"))
     implementation(include("io.github.llamalad7:mixinextras-forge:0.3.6"))
 
@@ -115,7 +114,7 @@ dependencies {
     implementation 'org.jetbrains:annotations:22.0.0'
 
 
-    modImplementation("net.mehvahdjukaar:moonlight-forge:${moonlight_version}")
+    modImplementation("libs:moonlight:1.20-2.13.67-forge")
     //modImplementation("curse.maven:selene-499980:5854670")
     modCompileOnly("curse.maven:farmers-delight-398521:5051242")
 
@@ -188,7 +187,7 @@ dependencies {
     modCompileOnly("curse.maven:citadel-331936:4786380")
     modCompileOnly("curse.maven:immediatelyfast-686911:4937545")
     modCompileOnly("curse.maven:cyanide-541676:4824162")
-    modCompileOnly("curse.maven:embeddium-908741:5566632")
+    modCompileOnly("libs:Sodium-NeoForge:mc1.20.1-0.6.0-Fix")
     modCompileOnly("curse.maven:integrated-stronghold-815548:5178479")
     modCompileOnly("curse.maven:integrated-api-817709:5241489")
     modCompileOnly("com.misterpemodder:shulkerboxtooltip-forge:${shulker_box_tooltip_version}") { transitive false }
@@ -197,4 +196,9 @@ dependencies {
 
     // modImplementation ("curse.maven:texture-dump-319039:3573998")
 
+}
+repositories {
+    flatDir {
+        dirs "libs"
+    }
 }
